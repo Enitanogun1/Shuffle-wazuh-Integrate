@@ -1,32 +1,58 @@
-*node_modules/
-*build/
-*.lock
+# ======================
+# OS/Editor/Temp files
+# ======================
 *.swo
 *.swp
 *.swn
-*__pycache__*
-
-Shuffle-*.json
-backend/go-app/generated*
-
-functions/generated_apps
+*.lock
 *.zip
-
-*openapi-parsers/generated/*
-*openapi-parsers/other/*
-
-
-backend/onprem/app_sdk/apps
-*test.py
-
 *.exe
+*.env
 *debug*
+__pycache__/
+*.py[cod]
+
+# Keep Debug UI, ignore other debug files
 !**/RuntimeDebugger.jsx
 
+# ======================
+# Node / JS build artifacts
+# ======================
+**/node_modules/
+**/build/
+**/package-lock.json
+
+# ======================
+# Python build & test artifacts
+# ======================
+*test.py
+
+# ======================
+# Shuffle-specific ignore rules
+# ======================
+
+# Ignore app definitions, auto-generated or exported
+Shuffle-*.json
+
+# Auto-generated Go files
+backend/go-app/generated*
+
+# Auto-generated functions/apps
+functions/generated_apps/
+
+# OpenAPI parser output
+openapi-parsers/generated/
+openapi-parsers/other/
+
+# Local app SDKs (on-prem only)
+backend/onprem/app_sdk/apps/
+
+# ======================
+# Shuffle Database configs and runtime data
+# ======================
 shuffle-database/batch_metrics_enabled.conf
 shuffle-database/logging_enabled.conf
-shuffle-database/nodes
 shuffle-database/performance_analyzer_enabled.conf
 shuffle-database/rca_enabled.conf
+shuffle-database/nodes/
 
-*/package-lock.json
